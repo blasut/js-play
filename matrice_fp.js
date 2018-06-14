@@ -39,14 +39,6 @@ map(
   map(dilatePoint(2))
 )(matrice)
 
-
-var scaleFactor = 4;
-var smallMatrice = [
-  [{x: 2, y: 1},
-   {x: 3, y: -2}],
-];
-// over each array, map over each array and call dilatePoint on it
-
 var dilateMatrice = (matrice, factor) => {
   return map(map(dilatePoint(factor)))(matrice)
 }
