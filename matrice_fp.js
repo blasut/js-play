@@ -84,26 +84,23 @@ console.log(
   over(coordinate)(updatePoint(5,5))(new_matrice),
 )
 
-// works
-over(matriceLens(2,2))(updatePoint(5,5))( over(coordinate)(updatePoint(0,0))(matrice) )
-
-console.log(
-  view(matriceLens(0,1), matrice),
-  view(matriceLens(1,1), matrice),
-  view(matriceLens(2,1), matrice),
-  view(matriceLens(1,2), matrice),
-  over(matriceLens(2,1))(updatePoint(5,5))(matrice),
-  over(matriceLens(1,2))(updatePoint(5,5))(matrice),
-)
-
 compose(
   over(matriceLens(0,0))(updatePoint(3,3)),
   over(matriceLens(1,1))(updatePoint(6,6)),
-  over(matriceLens(2,1))(updatePoint(4,4)),
   over(matriceLens(1,1))(updatePoint(5,5)),
   over(matriceLens(2,2))(updatePoint(6,6)),
 )(matrice)
 
+compose(
+  over(matriceLens(0,0))(updatePoint(3,3)),
+  over(matriceLens(1,1))(updatePoint(4,4)),
+  over(matriceLens(1,1))(updatePoint(9,9)),
+  over(matriceLens(2,2))(updatePoint(5,5)),
+  over(matriceLens(2,1))(updatePoint(5,4)),
+  over(matriceLens(2,0))(updatePoint(5,3)),
+)(matrice)
+
+over(matriceLens(2,1))(updatePoint(4,4))(matrice)
 
 console.log(
   view(col, matrice),
@@ -122,16 +119,6 @@ compose(
   compose(over(matriceLens(2,0))(updatePoint(0,0))),
 )(matrice)
 
-over(matriceLens(1,0))
-over(matriceLens(1,2))(updatePoint(0,0))(matrice)
-over(matriceLens(1,0))(log(updatePoint(0,0)))(matrice)
-
-
-over(matriceLens(1,0))(updatePoint(0,0))(matrice)
-over(matriceLens(2,0))(updatePoint(0,0))(matrice)
-
-over(matriceLens(1,0))(updatePoint(0,0))((over(matriceLens(2,0))(updatePoint(0,0)))(matrice))
-
 
 console.log(
   "all positions",
@@ -146,4 +133,14 @@ console.log(
   view(matriceLens(2,2), matrice),
 )
 
-over(amountLens)(add(5))({ x: 1, amount: 10 });
+// works
+over(matriceLens(2,2))(updatePoint(5,5))( over(coordinate)(updatePoint(0,0))(matrice) )
+
+console.log(
+  view(matriceLens(0,1), matrice),
+  view(matriceLens(1,1), matrice),
+  view(matriceLens(2,1), matrice),
+  view(matriceLens(1,2), matrice),
+  over(matriceLens(2,1))(updatePoint(5,5))(matrice),
+  over(matriceLens(1,2))(updatePoint(5,5))(matrice),
+)
