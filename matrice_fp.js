@@ -67,7 +67,7 @@ var assocIndex = (index) => (value, obj) => { return obj.map((item, i) => { if(i
 var lensIndex = (index) => lens(prop(index), assoc(index));
 var matriceLens = (r,c) => lens(
   (obj) => prop(c)(prop(r)(obj)),
-  (val, obj) => assocIndex(r)(assocIndex(c)(val, prop(c)(obj)), obj),
+  (val, obj) => assocIndex(r)(assocIndex(c)(val, prop(r)(obj)), obj),
 );
 
 var updatePoint = (x,y) => () => {return {x: y, y: y}}
