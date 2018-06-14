@@ -1,7 +1,7 @@
 function checkEq(m1, m2) {
   // LOL
   var eq = JSON.stringify(m1)===JSON.stringify(m2);
-  console.log("does m1:", m1, "equals m2?", m2, "answer:", eq);
+  console.log("does m1:", m1, "equal m2?", m2, "answer:", eq);
   return eq;
 }
 // https://www.varsitytutors.com/hotmath/hotmath_help/topics/scalar-multiplication-of-matrices.html
@@ -22,12 +22,13 @@ function dilateMatrix(cols, rows, matrix, scaleFactor) {
 }
 
 // example from: https://www.varsitytutors.com/hotmath/hotmath_help/topics/scalar-multiplication-of-matrices.html
+var scaleFactor = 4;
 var smallMatrix = [
   [{x: 2, y: 1},
    {x: 3, y: -2}],
 ];
 
-dilateMatrix(1, 2, smallMatrix, 4);
+dilateMatrix(1, 2, smallMatrix, scaleFactor);
 
 dilateMatrix(1,2, smallMatrix, 4)[0][0].x == 8
 dilateMatrix(1,2, smallMatrix, 4)[0][0].y == 4
@@ -70,3 +71,5 @@ var matrix = [
 dilateMatrix(3,3,matrix,scaleFactor);
 dilateMatrix(3,3,matrix,scaleFactor + 1);
 dilateMatrix(3,3,matrix,scaleFactor + 2);
+dilateMatrix(3,3,matrix,scaleFactor + 3);
+dilateMatrix(3,3,matrix,scaleFactor + 4);
