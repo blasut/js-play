@@ -47,3 +47,33 @@ checkEq(dilateMatrice(smallMatrice, 4), [
   [{x: 8, y: 4},
    {x: 12, y: -8}],
 ]);
+
+
+// printing:
+
+// m rows
+// n cols
+// a i,j
+// [a1,1 , a1,2, a1,3
+//  a2,1,  a2,2, a,2,3]
+
+var flatten = (arr) => arr.reduce((sum, elt, i) => { return sum.concat(elt) }, [])
+flatten(matrice)
+
+matrice
+  .map((row, rowIndex) => { return row.reduce((sum, elt, colIndex) => { return sum + rowIndex + "," + colIndex + " "; }, "") })
+  .reduce((sum, row, rowIndex) => { return  sum + row + "\n" }, "")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
